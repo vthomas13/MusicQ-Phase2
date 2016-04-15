@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="vthomas13.musicq_phase2.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INDIE"
+            android:id="@+id/indie"
+            android:textColor="#fbf3f3"
+            android:textStyle="bold|normal|italic"
+            android:typeface="monospace"
+            android:background="#ff662a"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="0.1667"
+            android:onClick="YTActivity.indie" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ROCK"
+            android:id="@+id/rock"
+            android:textColor="#fbf3f3"
+            android:textStyle="bold|normal|italic"
+            android:typeface="monospace"
+            android:background="#ff662a"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="0.1667"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HIP HOP"
+            android:id="@+id/hiphop"
+            android:textColor="#fbf3f3"
+            android:textStyle="bold|normal|italic"
+            android:typeface="monospace"
+            android:background="#ff662a"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="0.1667"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ELECTRONIC"
+            android:id="@+id/electronic"
+            android:textColor="#fbf3f3"
+            android:textStyle="bold|normal|italic"
+            android:typeface="monospace"
+            android:background="#ff662a"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="0.1667"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COUNTRY"
+            android:id="@+id/country"
+            android:textColor="#fbf3f3"
+            android:textStyle="bold|normal|italic"
+            android:typeface="monospace"
+            android:background="#ff662a"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="0.1667"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="POP"
+            android:id="@+id/pop"
+            android:textColor="#fbf3f3"
+            android:textStyle="bold|normal|italic"
+            android:typeface="monospace"
+            android:background="#ff662a"
+            android:layout_alignTop="@+id/hiphop"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="0.1667"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
