@@ -71,30 +71,6 @@ public class YTActivity extends YouTubeBaseActivity implements YouTubePlayer.OnI
     public static void startPlaylist (YouTubePlayer player, String key){
         player.loadPlaylist(key);
     }
-//    public static void indiePlaylist (YouTubePlayer player ){
-//
-//        player.loadPlaylist("PLSn1U7lJJ1UkPrOvoAb6UVRIbJeygpCma");
-//    }
-//    public static void rockPlaylist (YouTubePlayer player){
-//
-//        player.loadPlaylist("PLhd1HyMTk3f5S98HGlByL2eH1T3n6J-bR");
-//    }
-//    public static void hiphopPlaylist (YouTubePlayer player){
-//
-//        player.loadPlaylist("PLH6pfBXQXHEBElcVFl-gGewA2OaATF4xL");
-//    }
-//    public static void electronicPlaylist (YouTubePlayer player){
-//
-//        player.loadPlaylist("PLFPg_IUxqnZNTAbUMEZ76_snWd-ED5en7");
-//    }
-//    public static void countryPlaylist (YouTubePlayer player){
-//
-//        player.loadPlaylist("PLvLX2y1VZ-tHnQyOqyemaWjZjrJYr8ksp");
-//    }
-//    public static void popPlaylist (YouTubePlayer player){
-//
-//        player.loadPlaylist("PLDcnymzs18LWbmCFUlZie7VsxQ_FIF0_y");
-//    }
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult errorReason) {
         if (errorReason.isUserRecoverableError()) {
