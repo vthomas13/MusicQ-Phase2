@@ -3,38 +3,29 @@ package vthomas13.musicq_phase2;
 /**
  * Created by vthomas13 on 4/13/2016.
  */
-import com.google.android.youtube.player.YouTubeApiServiceUtil;
-import com.google.android.youtube.player.YouTubeIntents;
-import com.google.android.youtube.player.YouTubePlayerFragment;
 import com.squareup.picasso.Picasso;
 import android.content.Intent;
-import android.drm.DrmStore;
-import android.graphics.Picture;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
-import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.android.youtube.player.YouTubeThumbnailView;
-
-import java.net.URI;
-
 import static vthomas13.musicq_phase2.R.string.*;
 
 public class YTActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener{
     private static final int RECOVERY_REQUEST = 1;
     private YouTubePlayerView youTubeView;
-
-
+    private String indieKey= "PLSn1U7lJJ1UkPrOvoAb6UVRIbJeygpCma";
+    private String rockKey= "PLhd1HyMTk3f5S98HGlByL2eH1T3n6J-bR";
+    private String hiphopKey= "PLH6pfBXQXHEBElcVFl-gGewA2OaATF4xL";
+    private String edmKey= "PLFPg_IUxqnZNTAbUMEZ76_snWd-ED5en7";
+    private String countryKey= "PLvLX2y1VZ-tHnQyOqyemaWjZjrJYr8ksp";
+    private String popKey= "PLDcnymzs18LWbmCFUlZie7VsxQ_FIF0_y";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ytactivity);
@@ -55,51 +46,55 @@ public class YTActivity extends YouTubeBaseActivity implements YouTubePlayer.OnI
         if (!wasRestored) {
            switch (MainActivity.i){
                     case 1:
-                        indiePlaylist(player);
+                        startPlaylist(player, indieKey);
                         break;
                     case 2:
-                        hiphopPlaylist(player);
+                        startPlaylist(player, rockKey);
                         break;
                     case 3:
-                        rockPlaylist(player);
+                        startPlaylist(player, hiphopKey);
                         break;
                     case 4:
-                        electronicPlaylist(player);
+                        startPlaylist(player, edmKey);
                         break;
                     case 5:
-                        countryPlaylist(player);
+                        startPlaylist(player, countryKey );
                         break;
                     case 6:
-                        popPlaylist(player);
+                        startPlaylist(player, popKey);
                         break;
+               default:
+
            }
         }
     }
-
-    public static void indiePlaylist (YouTubePlayer player){
-
-        player.loadPlaylist("PLSn1U7lJJ1UkPrOvoAb6UVRIbJeygpCma");
+    public static void startPlaylist (YouTubePlayer player, String key){
+        player.loadPlaylist(key);
     }
-    public static void rockPlaylist (YouTubePlayer player){
-
-        player.loadPlaylist("PLhd1HyMTk3f5S98HGlByL2eH1T3n6J-bR");
-    }
-    public static void hiphopPlaylist (YouTubePlayer player){
-
-        player.loadPlaylist("PLH6pfBXQXHEBElcVFl-gGewA2OaATF4xL");
-    }
-    public static void electronicPlaylist (YouTubePlayer player){
-
-        player.loadPlaylist("PLFPg_IUxqnZNTAbUMEZ76_snWd-ED5en7");
-    }
-    public static void countryPlaylist (YouTubePlayer player){
-
-        player.loadPlaylist("PLvLX2y1VZ-tHnQyOqyemaWjZjrJYr8ksp");
-    }
-    public static void popPlaylist (YouTubePlayer player){
-
-        player.loadPlaylist("PLDcnymzs18LWbmCFUlZie7VsxQ_FIF0_y");
-    }
+//    public static void indiePlaylist (YouTubePlayer player ){
+//
+//        player.loadPlaylist("PLSn1U7lJJ1UkPrOvoAb6UVRIbJeygpCma");
+//    }
+//    public static void rockPlaylist (YouTubePlayer player){
+//
+//        player.loadPlaylist("PLhd1HyMTk3f5S98HGlByL2eH1T3n6J-bR");
+//    }
+//    public static void hiphopPlaylist (YouTubePlayer player){
+//
+//        player.loadPlaylist("PLH6pfBXQXHEBElcVFl-gGewA2OaATF4xL");
+//    }
+//    public static void electronicPlaylist (YouTubePlayer player){
+//
+//        player.loadPlaylist("PLFPg_IUxqnZNTAbUMEZ76_snWd-ED5en7");
+//    }
+//    public static void countryPlaylist (YouTubePlayer player){
+//
+//        player.loadPlaylist("PLvLX2y1VZ-tHnQyOqyemaWjZjrJYr8ksp");
+//    }
+//    public static void popPlaylist (YouTubePlayer player){
+//
+//        player.loadPlaylist("PLDcnymzs18LWbmCFUlZie7VsxQ_FIF0_y");
+//    }
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult errorReason) {
         if (errorReason.isUserRecoverableError()) {

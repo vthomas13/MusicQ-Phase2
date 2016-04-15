@@ -22,16 +22,16 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(new Intent(MainActivity.this, YTActivity.class));
             }
         });
-        Button hiphopBtn = (Button)findViewById(R.id.hiphop);
-        hiphopBtn.setOnClickListener(new View.OnClickListener() {
+        Button rockBtn = (Button)findViewById(R.id.rock);
+        rockBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 i=2;
                 startActivity(new Intent(MainActivity.this, YTActivity.class));
             }
         });
-        Button rockBtn = (Button)findViewById(R.id.rock);
-        rockBtn.setOnClickListener(new View.OnClickListener() {
+        Button hiphopBtn = (Button)findViewById(R.id.hiphop);
+        hiphopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 i=3;
