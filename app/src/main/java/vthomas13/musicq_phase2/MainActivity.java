@@ -5,11 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import vthomas13.musicq_phase2.YTActivity;
 
 import com.google.android.youtube.player.YouTubePlayer;
 
 public class MainActivity extends AppCompatActivity{
-    public static int i;
+    public static String genre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity{
         indieBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i=1;
+                genre = "indie";
                 startActivity(new Intent(MainActivity.this, YTActivity.class));
             }
         });
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity{
         rockBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i=2;
+                genre = "rock";
                 startActivity(new Intent(MainActivity.this, YTActivity.class));
             }
         });
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity{
         hiphopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i=3;
+                genre = "hiphop";
                 startActivity(new Intent(MainActivity.this, YTActivity.class));
             }
         });
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity{
         edmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i=4;
+                genre = "edm";
                 startActivity(new Intent(MainActivity.this, YTActivity.class));
             }
         });
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity{
         countryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i=5;
+                genre = "country";
                 startActivity(new Intent(MainActivity.this, YTActivity.class));
             }
         });
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity{
         popBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i=6;
+                genre = "pop";
                 startActivity(new Intent(MainActivity.this, YTActivity.class));
             }
         });

@@ -20,7 +20,7 @@ import static vthomas13.musicq_phase2.R.string.*;
 public class YTActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener{
     private static final int RECOVERY_REQUEST = 1;
     private YouTubePlayerView youTubeView;
-    private String indieKey= "PLSn1U7lJJ1UkPrOvoAb6UVRIbJeygpCma";
+    public final String indieKey= "PLSn1U7lJJ1UkPrOvoAb6UVRIbJeygpCma";
     private String rockKey= "PLhd1HyMTk3f5S98HGlByL2eH1T3n6J-bR";
     private String hiphopKey= "PLH6pfBXQXHEBElcVFl-gGewA2OaATF4xL";
     private String edmKey= "PLFPg_IUxqnZNTAbUMEZ76_snWd-ED5en7";
@@ -29,42 +29,39 @@ public class YTActivity extends YouTubeBaseActivity implements YouTubePlayer.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ytactivity);
-        ImageView imgView = (ImageView) findViewById(R.id.imageView);
-        setPicture(imgView, Uri.parse("https://i.ytimg.com/vi_webp/s_a1hPwXiWw/default.webp"));
+//        ImageView imgView = (ImageView) findViewById(R.id.imageView); //commented thumbail
+//        setPicture(imgView, Uri.parse("https://i.ytimg.com/vi_webp/s_a1hPwXiWw/default.webp"));
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
 
 
     }
     public void setPicture(ImageView imgView, Uri uri){
-//        imgView.setImageURI(uri);
-
         Picasso.with(this).load(uri).into(imgView);
     }
 
     public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
         if (!wasRestored) {
-           switch (MainActivity.i){
-                    case 1:
+           switch (MainActivity.genre){
+                    case "indie":
                         startPlaylist(player, indieKey);
                         break;
-                    case 2:
+                    case "rock":
                         startPlaylist(player, rockKey);
                         break;
-                    case 3:
+                    case "hiphop":
                         startPlaylist(player, hiphopKey);
                         break;
-                    case 4:
+                    case "edm":
                         startPlaylist(player, edmKey);
                         break;
-                    case 5:
+                    case "country":
                         startPlaylist(player, countryKey );
                         break;
-                    case 6:
+                    case "pop":
                         startPlaylist(player, popKey);
                         break;
                default:
-
            }
         }
     }
@@ -93,7 +90,6 @@ public class YTActivity extends YouTubeBaseActivity implements YouTubePlayer.OnI
     protected Provider getYouTubePlayerProvider() {
         return youTubeView;
     }
-
 
 
 }
